@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -94,10 +95,21 @@ public class SearchKeyWordsServiceImp implements SearchKeyWordsService{
 		}
 
 		@Override
-		public SearchKeyWords addSearch(String q) {
+		public List<SearchKeyWords> getAllSearch() {
 			// TODO Auto-generated method stub
-			return null;
+			List<SearchKeyWords> t1 = null;
+		//	Supplier<Exception> s1 = ()->new Exception(" id is not present in the database");
+			t1 = sRepo.findAll();
+					
+			return t1;
+			//return null;
 		}
+
+//		@Override
+//		public SearchKeyWords addSearch(String q) {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
 
 		
 		

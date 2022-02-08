@@ -1,4 +1,4 @@
-console.log("in console");
+console.log("Executing script for Search");
 
 // getting all required elements
 const searchWrapper = document.querySelector(".search-input");

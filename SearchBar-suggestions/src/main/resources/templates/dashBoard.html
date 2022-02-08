@@ -23,7 +23,7 @@
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
-                ['Mushrooms', 10],
+                ['Mushrooms', 3],
                 ['Onions', 1],
                 ['Olives', 1],
                 ['Zucchini', 1],
@@ -31,7 +31,7 @@
             ]);
 
             // Set chart options
-            var options = {'title':'Most Searched Files',
+            var options = {'title':'How Much Pizza I Ate Last Night',
                 'width':400,
                 'height':300};
 
@@ -42,7 +42,21 @@
     </script>
 </head>
 <body>
-<h1>Dash Board</h1>
+<h1>Google Charts With Thymeleaf</h1>
 <div id="chart_div"></div> 
 </body>
 </html>
+
+<!--  var arr = [];
+            for (var {keyword: k, count: c} of searchesData) {
+            	  console.log('Keyword: ' + k + ', Count: ' + c);
+            	  console.log('Keyword tyoe: ' +typeof k + ', Count type: ' +typeof c);
+            	 
+            	  //arr.push(k, c);
+            	 // console.log(arr); 
+            	 	}
+            	 	-->
+           
+            	  
+            	  
+            

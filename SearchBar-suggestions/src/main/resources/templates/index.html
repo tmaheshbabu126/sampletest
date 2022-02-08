@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="utf-8">
     <title>Autocomplete Search Box | CodingNepal</title>
@@ -21,6 +22,13 @@
     </div>
 
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+
+<script th:inline="javascript">
+    var number = [[${number}]];
+    var message = [[${message}]];
+
+</script>
+
 <script type="text/javascript" th:src="@{js/suggestions.js}"></script>
 <script type="text/javascript" th:src="@{js/script.js}"></script>
 

@@ -1,4 +1,6 @@
 
+console.log("Filename = ");
+console.log(number);
 
 /*let suggestions = [
     "Channel",
@@ -29,5 +31,7 @@
     "What does CSS stands for?",
 ];*/
 
-
-let suggestions =["Text File","Csv File", "xlsx File"];
+let suggestions = number;
+/*let suggestions =["Text File","Csv File", "xlsx File"];*/
+console.log("the suggestions are");
+console.log(suggestions);

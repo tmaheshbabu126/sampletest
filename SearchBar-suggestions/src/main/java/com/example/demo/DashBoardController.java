@@ -1,6 +1,10 @@
 package com.example.demo;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,8 +26,12 @@ public class DashBoardController {
 	SearchKeyWordsServiceImp si;
 	
 	@RequestMapping("/dashBoard")
-	public  String dashController() {
+	public  String dashController(Map<String, Object> model) {
 		
+		List<SearchKeyWords> searchesData = si.getAllSearch();
+		
+		 model.put("searchesData", searchesData);
+		    model.put("count", "Hello from Spring MVC");
 	        return "dashBoard";
 	    
 	}
@@ -31,9 +39,10 @@ public class DashBoardController {
 	@RequestMapping("/search")
 	@ResponseBody
 	public String
-	thymeleafView( @RequestParam String q ,Map<String, Object> model,RedirectAttributes redirectAttributes) {
-	    model.put("number", 1234);
-	    model.put("message", "Hello from Spring MVC");
+	thymeleafView( @RequestParam String q ,Map<String, Object> model,RedirectAttributes redirectAttributes, HttpServletResponse httpResponse) throws IOException {
+		/*
+		 * model.put("number", 1234); model.put("message", "Hello from Spring MVC");
+		 */
 	   // return new ModelAndView("thymeleaf/index");
 	    System.out.println(q);
 	    
@@ -45,8 +54,10 @@ public class DashBoardController {
 			
 			ResponseEntity<SearchKeyWords> rt=new ResponseEntity<SearchKeyWords>(te1,HttpStatus.OK); //response to client
 			//return rt;
+			
+			httpResponse.sendRedirect("/dashBoard");
 	    
-	   return "redirect:/index";
+	   return "redirect:/dashBoard";
 	}
 	
 
